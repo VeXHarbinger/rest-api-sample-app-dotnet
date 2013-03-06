@@ -1,0 +1,52 @@
+﻿CREATE TABLE users
+(
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+    email NVARCHAR NOT NULL UNIQUE, 
+    encrypted_password NVARCHAR NOT NULL, 
+    reset_password_token NVARCHAR, 
+    reset_password_sent_at datetime, 
+    remember_created_at datetime, 
+    sign_in_count INTEGER DEFAULT 0, 
+    current_sign_in_at DATETIME, 
+    last_sign_in_at DATETIME, 
+    current_sign_in_ip NVARCHAR,
+    last_sign_in_ip NVARCHAR, 
+    created_at DATETIME NOT NULL, 
+    updated_at DATETIME NOT NULL, 
+    credit_card_id NVARCHAR,
+    credit_card_description NVARCHAR
+)
+
+SELECT * FROM users
+
+DROP TABLE "main"."users"
+ALTER TABLE "main"."users" RENAME TO "usersOriginal"
+
+CREATE TABLE orders 
+(
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+    user_id INTEGER,
+    payment_id NVARCHAR, 
+    state NVARCHAR, 
+    amount NVARCHAR, 
+    description NVARCHAR, 
+    created_at DATETIME NOT NULL, 
+    updated_at DATETIME NOT NULL
+)
+
+SELECT * FROM orders
+
+SELECT * FROM orders WHERE user_id = 1
+
+SELECT DISTINCT id, * FROM orders WHERE user_id = 1 ORDER BY id DESC LIMIT 1
+
+SELECT id, user_id, payment_id, state, amount, description, created_at, updated_at FROM orders WHERE user_id = 1 ORDER BY updated_at DESC
+
+SELECT id, user_id, payment_id, state, amount, description, created_at, updated_at FROM orders WHERE user_id = 1 ORDER BY updated_at DESC, id DESC
+
+SELECT DISTINCT id, user_id, payment_id, state, amount, description, created_at, updated_at FROM orders WHERE user_id = 1 ORDER BY updated_at DESC, id DESC
+
+SELECT DISTINCT id, user_id, payment_id, state, amount, description, created_at, updated_at FROM orders WHERE user_id = 1 ORDER BY updated_at DESC, id DESC LIMIT 1
+
+DROP TABLE "main"."orders"
+ALTER TABLE "main"."orders" RENAME TO "ordersOriginal"
