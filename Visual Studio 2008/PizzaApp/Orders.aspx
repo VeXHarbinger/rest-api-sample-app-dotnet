@@ -64,7 +64,7 @@
             <div class='navbar-inner'>
                 <div class='container'>
                     <p class='pull-right'>
-                        Powered by PayPal</p>
+                        Powered by PayPal REST APIs</p>
                 </div>
             </div>
         </div>

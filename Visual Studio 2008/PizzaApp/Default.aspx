@@ -222,11 +222,22 @@
                     </div>
                 </div>
             </div>
+            <br/><br/><br/>
+            <div class="row">
+                <div class="span6 offset3">
+                  <p>This is a sample application which showcases the new PayPal REST APIs. The app uses mock data to demonstrate how you can use the REST APIs for</p>
+                  <ul>
+                     <li>Saving credit card information with PayPal for later use.</li>
+                     <li>Making payments using a saved credit card.</li>
+                     <li>Making payments using PayPal.</li>
+                  </ul>
+                </div>
+            </div>
         </div>
         <div class='navbar navbar-fixed-bottom' id='footer'>
             <div class='navbar-inner'>
                 <div class='container'>
-                    <p class='pull-right'>Powered by PayPal</p>
+                    <p class='pull-right'>Powered by PayPal REST APIs</p>
                 </div>
             </div>
         </div>

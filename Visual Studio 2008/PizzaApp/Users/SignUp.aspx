@@ -34,13 +34,14 @@
             <label id="labelAlertMessage" runat="server"></label>
         </div>
             <h2>SignUp</h2>
+			<p>Sign up for a new PizzaShop account.</p>
             <div style="margin: 0; padding: 0; display: inline">
                 <input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token"
                     type="hidden" value="Xw375OCUATPvjL7T9Uu60e+p12YNqhGGuYdmC8sgNIc=" /></div>
             <div class="control-group email required">
                 <label class="email optional control-label">Email</label>
                     <div class="controls">
-                        <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="string email required" Height="3%" ValidationGroup="SignUpGroup" TabIndex="1"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="string email required" Height="3%" ValidationGroup="SignUpGroup" TabIndex="1" placeholder="dummy@email.com"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="TextBoxEmail"
                             Display="Dynamic" ErrorMessage="Please enter Email ID." ForeColor="#FF0000"  runat="server" ValidationGroup="SignUpGroup" />
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
@@ -70,8 +71,10 @@
                             ValidationGroup="SignUpGroup" />
                     </div>
             </div>
-            <label>Credit Card Type</label>            
+	        <h4>Add Credit Card (Optional)</h4>
+    	    <p>Your credit card information is stored safely with PayPal.</p>
             <div class="control-group select required">
+            	    <label>Credit Card Type</label>            
                     <div class="controls">
                         <asp:DropDownList ID="DropDownListCreditCardType" runat="server" ValidationGroup="SignUpGroup" TabIndex="4">                         
                             <asp:ListItem Value="--Select--" Text="--Select--" />
@@ -154,7 +157,7 @@
         <div class='navbar navbar-fixed-bottom' id='footer'>
             <div class='navbar-inner'>
                 <div class='container'>
-                    <p class='pull-right'>Powered by PayPal</p>
+                    <p class='pull-right'>Powered by PayPal REST APIs</p>
                 </div>
             </div>
         </div>

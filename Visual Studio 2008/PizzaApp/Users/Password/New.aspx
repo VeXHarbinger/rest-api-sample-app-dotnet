@@ -54,7 +54,7 @@
         <div class='navbar navbar-fixed-bottom' id='footer'>
             <div class='navbar-inner'>
                 <div class='container'>
-                    <p class='pull-right'>Powered by PayPal</p>
+                    <p class='pull-right'>Powered by PayPal REST APIs</p>
                 </div>
             </div>
         </div>

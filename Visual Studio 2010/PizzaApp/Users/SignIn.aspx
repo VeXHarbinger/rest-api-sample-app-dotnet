@@ -35,6 +35,7 @@
             <label id="labelAlertMessage" runat="server"></label>
         </div>     
             <h2>SignIn</h2>
+			<p>Sign in with your PizzaShop account. Don't have an account yet? <a href="/Users/SignUp.aspx">Sign up</a> for one.</p>
             <div style="margin: 0; padding: 0; display: inline">
                 <input name="utf8" type="hidden" value="&#x2713;" />
                 <input name="authenticity_token" type="hidden" value="Xw375OCUATPvjL7T9Uu60e+p12YNqhGGuYdmC8sgNIc=" />
@@ -44,7 +45,7 @@
                     Email</label>
                 <div class="controls">
                     <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="string email optional" Height="3%"
-                        ValidationGroup="SignInGroup"></asp:TextBox>
+                        ValidationGroup="SignInGroup" placeholder="dummy@email.com" ></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="TextBoxEmail"
                         Display="Dynamic" ErrorMessage="Please enter Email ID." ForeColor="#FF0000" runat="server"
                         ValidationGroup="SignInGroup" />
@@ -75,13 +76,12 @@
                 <asp:Button ID="ButtonSignIn" runat="server" CssClass="btn btn btn-primary" Text="SignIn"
                     OnClick="ButtonSignIn_Click" Height="3%" ValidationGroup="SignInGroup" />
             </div>
-            <a href="/Users/SignUp.aspx">SignUp</a><br />
             <a href="/Users/Password/New.aspx">Forgot Password?</a><br />
         </div>
         <div class='navbar navbar-fixed-bottom' id='footer'>
             <div class='navbar-inner'>
                 <div class='container'>
-                    <p class='pull-right'>Powered by PayPal</p>
+                    <p class='pull-right'>Powered by PayPal REST APIs</p>
                 </div>
             </div>
         </div>
