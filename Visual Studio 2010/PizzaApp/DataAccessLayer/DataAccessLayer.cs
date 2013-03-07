@@ -24,24 +24,6 @@ namespace PizzaApp
             }
         }
 
-        public int NumberOfRows(string sqliteQuerySelect, SQLiteDataAdapter dataAdapterSQLite)
-        {
-            int rows = 0;            
-            try
-            {
-                DataTable datTable = new DataTable();
-                using (SQLiteConnection connectionSQLite = new SQLiteConnection(ConnectionString))
-                {
-                    dataAdapterSQLite.SelectCommand.CommandText = sqliteQuerySelect;
-                    dataAdapterSQLite.SelectCommand.Connection = connectionSQLite;
-                    connectionSQLite.Open();
-                    rows = dataAdapterSQLite.Fill(datTable);
-                }
-            }
-            catch {}
-            return rows;
-        }
-
         public DataTable Select(string sqliteQuerySelect, SQLiteDataAdapter dataAdapterSQLite)
         {
            DataTable datTable = new DataTable();

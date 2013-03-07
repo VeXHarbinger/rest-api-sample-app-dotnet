@@ -69,28 +69,37 @@ namespace PizzaApp
         private bool CheckIsExistingUser()
         {
             bool isExistingUser = false;
-
+            DataTable datTable = new DataTable();
             int rows = 0;
             var email = TextBoxEmail.Text.Trim();
             StringBuilder sqliteQuerySelect = new StringBuilder();
             sqliteQuerySelect.Append("SELECT ");
-            sqliteQuerySelect.Append("id, ");
-            sqliteQuerySelect.Append("email, ");
-            sqliteQuerySelect.Append("encrypted_password, ");
-            sqliteQuerySelect.Append("sign_in_count ");
+            sqliteQuerySelect.Append("count(*) AS NumberOfUsers ");
             sqliteQuerySelect.Append("FROM users ");
             sqliteQuerySelect.Append("WHERE email = @email");
             SQLiteDataAdapter sqliteDataAdapterSelect = new SQLiteDataAdapter();
             sqliteDataAdapterSelect.SelectCommand = new SQLiteCommand();
             sqliteDataAdapterSelect.SelectCommand.Parameters.AddWithValue("@email", email);
             dataAccessObject = new DataAccessLayer();
-            rows = dataAccessObject.NumberOfRows(sqliteQuerySelect.ToString(), sqliteDataAdapterSelect);
+            datTable = dataAccessObject.Select(sqliteQuerySelect.ToString(), sqliteDataAdapterSelect);
 
+            if (datTable != null && datTable.Rows.Count > 0)
+            {
+                var distinctRows = from DataRow dRow in datTable.Rows
+                                   select new { column1 = dRow["NumberOfUsers"] };
+                if (distinctRows != null)
+                {
+                    foreach (var row in distinctRows)
+                    {
+                        rows = Convert.ToInt32(row.column1);
+                        break;
+                    }
+                }
+            }
             if (rows == 1)
             {
                 isExistingUser = true;
             }
-
             return isExistingUser;
         }
 
