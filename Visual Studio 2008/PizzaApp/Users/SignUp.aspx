@@ -71,7 +71,7 @@
                             ValidationGroup="SignUpGroup" />
                     </div>
             </div>
-	        <h4>Add Credit Card (Optional)</h4>
+	        <h4>Add Credit Card</h4>
     	    <p>Your credit card information is stored safely with PayPal.</p>
             <div class="control-group select required">
             	    <label>Credit Card Type</label>            

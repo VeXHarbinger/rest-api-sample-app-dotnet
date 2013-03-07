@@ -113,12 +113,12 @@ Running the aforesaid command should list the .NET Framework versions installed 
 Note: Most Windows machines would have .NET Framework 4.0 installed as part of Windows (recommended) update.
 
 If V4.X is not installed, then download and install
-   * 	.NET Framework 4 (Standalone Installer) � (free to download):
+   * 	.NET Framework 4 (Standalone Installer) (free to download):
 http://www.microsoft.com/en-in/download/details.aspx?id=17718
 
 Or
 
-   * 	.NET Framework 4 (Web Installer) � (free to download):
+   * 	.NET Framework 4 (Web Installer) (free to download):
 http://www.microsoft.com/en-in/download/details.aspx?id=17851
 
 Download NuGet.exe Command Line (free to download): http://nuget.codeplex.com/releases/view/58939
