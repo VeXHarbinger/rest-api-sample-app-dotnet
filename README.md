@@ -5,7 +5,7 @@
 Overview
 --------
 
-The PizzaApp showcases the features of PayPal's RESTful APIs
+The PizzaApp showcases the features of PayPal's REST APIs
 
    * Save Credit Card with PayPal for later Payments
    * Make Payments using the saved Credit Card ID
@@ -38,30 +38,30 @@ Dependent library references
 	
 SDK Integration
 ---------------
-   * Integrate PayPal RESTful API SDK with an ASP.NET Web Application
+   * Integrate PayPal REST API SDK with an ASP.NET Web Application
    * Use NuGet.exe to install the dependencies in Visual Studio 2008
    * The NuGet package installs the dependencies to the solution and automatically updates the project in Visual Studio 2010
 
 References
 ----------
 
-   * RESTful API SDK repository - https://github.com/paypal/rest-api-sdk-dotnet.git
+   * REST API SDK repository - https://github.com/paypal/rest-api-sdk-dotnet.git
 
 
-NuGet – Installing NuGet in Visual Studio 2010 and 2012
+NuGet - Installing NuGet in Visual Studio 2010 and 2012
 -------------------------------------------------------
 
 Go to Visual Studio 2010 Menu --> Tools
-Select Extension Manager…
+Select Extension Manager
 Enter NuGet in the search box and click Online Gallery
-Let it Retrieve information…
+Let it Retrieve information
 Select the retrieved NuGet Package Manager, click Download
-Let it Download…
+Let it Download
 Click Install on the Visual Studio Extension Installer NuGet Package Manager
-Let it Install…
+Let it Install
 Click Close and Restart Now
 
-Go to Visual Studio 2010 Menu --> Tools, select Options…
+Go to Visual Studio 2010 Menu --> Tools, select Options
 Verify the following on the Options popup
 Click Package Manager --> Package Sources
 Available package sources:
@@ -78,13 +78,13 @@ Enter at PM>
 ***************************************************
 
    * PM>Install-Package PayPalCoreSDK
-   * •	PayPalCoreSDK.dll
-   * •	log4net.dll
+   * 	PayPalCoreSDK.dll
+   * 	log4net.dll
    * PM>Install-Package System.Data.SQLite
-	•	System.Data.SQLite.dll
-	•	System.Data.SQLite.Linq.dll
+	*	System.Data.SQLite.dll
+	*	System.Data.SQLite.Linq.dll
    * PM>Install-Package Newtonsoft.Json
-	•	Newtonsoft.Json.dll
+	*	Newtonsoft.Json.dll
    * Note that the refrences get added automatically	
 	
 ***************************************************
@@ -94,8 +94,8 @@ NuGet - Integrating NuGet with Visual Studio 2008
 -------------------------------------------------
 
 Prerequisites:
-   * •	.NET Framework 4.0
-   * •	NuGet.exe
+   * 	.NET Framework 4.0
+   * 	NuGet.exe
 	
 Check if .NET Framework 4.0 is installed in the computer from Control Panel --> Get programs
 
@@ -103,22 +103,22 @@ Or run the following command from Windows command prompt:
 >dir  /b  %windir%\Microsoft.NET\Framework\v*
 
 Running the aforesaid command should list the .NET Framework versions installed as follows:
-v1.0.3705
-v1.1.4322
-v2.0.50727
-v3.0
-v3.5
-v4.0.30319
+   * v1.0.3705
+   * v1.1.4322
+   * v2.0.50727
+   * v3.0
+   * v3.5
+   * v4.0.30319
 
 Note: Most Windows machines would have .NET Framework 4.0 installed as part of Windows (recommended) update.
 
 If V4.X is not installed, then download and install
-   * •	.NET Framework 4 (Standalone Installer) – (free to download):
+   * 	.NET Framework 4 (Standalone Installer) ï¿½ (free to download):
 http://www.microsoft.com/en-in/download/details.aspx?id=17718
 
 Or
 
-   * •	.NET Framework 4 (Web Installer) – (free to download):
+   * 	.NET Framework 4 (Web Installer) ï¿½ (free to download):
 http://www.microsoft.com/en-in/download/details.aspx?id=17851
 
 Download NuGet.exe Command Line (free to download): http://nuget.codeplex.com/releases/view/58939
@@ -127,10 +127,10 @@ Save NuGet.exe to folder viz., 'C:\NuGet' and add its path to the Environment Va
 
 Visual Studio 2005 or 2008
 Go to Visual Studio Menu --> Tools
-Select External Tools…
+Select External Tools
 External Tools
 External Tools having 5* default tools in the Menu contents, Click Add
-*Note: The number of default tools may differ depending on the particular Visual Studio installation
+   * Note: The number of default tools may differ depending on the particular Visual Studio installation
  
 Enter the following:
 Title: NuGet Install
@@ -146,8 +146,8 @@ On Clicking Apply and OK, NuGet Install will be added (as External Command 6*) t
    * Note : The External Command number may differ depending on the particular Visual Studio installation
 
 Menu --> Tools, clicking NuGet Install will pop up for NuGet Install Arguments and Command Line
-Also, NuGet Toolbar can be added, right-click on Visual Studio Menu and select Customize…
-Customize by clicking New…
+Also, NuGet Toolbar can be added, right-click on Visual Studio Menu and select Customize
+Customize by clicking New
 Enter Toolbar name: NuGet and click OK
 Check NuGet Checkbox in the Toolbars tab for NuGet Toolbar to pop up
 Click Commands tab and select Tools and External Command 6 (Having added NuGet Install as External Command 6*) 
@@ -165,20 +165,10 @@ Enter Arguments:
 ***************************************************
 
 install PayPalCoreSDK -excludeversion -outputDirectory .\Packages
-
-   * PayPalCoreSDK.dll - Version 1.0.1.0 - Add the reference manually from Packages\log4net\lib\2.0 folder
-   * log4net.dll - Version 1.2.10.0 - Add the reference manually from log4net\lib\2.0 from Packages\PayPalCoreSDK\lib folder
 	
 install System.Data.SQLite -excludeversion -outputDirectory .\Packages
-
-   * System.Data.SQLite.dll - Version 1.0.84.0 - Add the reference manually from Packages\Newtonsoft.Json\lib\\net40 folder
-   * System.Data.SQLite.Linq.dll - Version 1.0.84.0 - Add the reference manually from Packages\Newtonsoft.Json\lib\net40 folder
-      * Note: Copy x64 and x86 folders to the bin folder
-    • * Note: Must place SQLite.Interop.dll where System.Data.SQLite.dll can find it as it
-	
+  
 install Newtonsoft.Json -excludeversion -outputDirectory .\Packages
-
-   * Newtonsoft.Json.dll - Version 4.5.0.0 - Add the reference manually from Packages\Newtonsoft.Json\lib\net35\Newtonsoft.Json.dll
 
 ***************************************************
 
