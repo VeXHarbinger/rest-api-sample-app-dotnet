@@ -21,10 +21,7 @@ Pre-requisites
    * Note: NuGet 2.2 requires .NET Framework 4.0
 
 Running the sample
-------------------
-
-   * Create a new folder for the sqllite db (by default this is c:\PayPalPizzaApp) and copy the PizzaAppDatabase.sqlite3 file available under App_Data to this location.
-   * Update the ConnectionString parameter in Web.Config to point to this folder. 
+------------------ 
    * Run the app from within Visual Studio or on IIS.
 
 Dependent library references
